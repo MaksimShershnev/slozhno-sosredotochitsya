@@ -1,0 +1,167 @@
+/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+
+.page {
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  padding: clamp(
+    0.625rem,
+    0.0271rem + 2.551vw,
+    1.25rem
+  ); /* от 10px при 375 до 20px при 768 и больше */
+  color: var(--text-color, #f1b2ce);
+  font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 1.3; /* 130% */
+  background:
+    url(../images/cover-image-dark.png),
+    lightgray 50% / cover no-repeat;
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, -webkit-min-content);
+  grid-template-rows: repeat(3, min-content);
+  grid-template-areas:
+    'nav nav'
+    'header__title header__title'
+    'paragraph paragraph';
+  -webkit-margin-after: clamp(
+    0.625rem,
+    0.0271rem + 2.551vw,
+    1.25rem
+  );
+          margin-block-end: clamp(
+    0.625rem,
+    0.0271rem + 2.551vw,
+    1.25rem
+  ); /* от 10px при 375 до 20px при 768 и больше */
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  -webkit-border-end: 1px solid var(--accent-color, #ff0070);
+          border-inline-end: 1px solid var(--accent-color, #ff0070);
+  -webkit-border-before: 1px solid var(--accent-color, #ff0070);
+          border-block-start: 1px solid var(--accent-color, #ff0070);
+  inset-inline-end: 0;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  -webkit-border-start: 1px solid var(--accent-color, #ff0070);
+          border-inline-start: 1px solid var(--accent-color, #ff0070);
+  -webkit-border-after: 1px solid var(--accent-color, #ff0070);
+          border-block-end: 1px solid var(--accent-color, #ff0070);
+  inset-block-end: 0;
+}
+
+.header__element-rec {
+  position: absolute;
+  inset: 0 0 auto auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+  color: var(--accent-color, #ff0070);
+  text-transform: uppercase;
+}
+
+.header__element-rec::after {
+  content: '';
+  display: block;
+  inline-size: 25px;
+  block-size: 25px;
+  background-image: url(../images/Ellipse.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header__theme-menu {
+  grid-area: nav;
+  -webkit-margin-before: clamp(3.938rem, -2.444rem + 27.226vw, 10.625rem);
+          margin-block-start: clamp(3.938rem, -2.444rem + 27.226vw, 10.625rem);
+}
+
+.header__theme-menu-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  gap: 10px;
+}
+
+.header__theme-menu-item {
+  padding: 4px 13px;
+  color: var(--accent-color, #ff0070);
+  line-height: 1;
+}
+
+.header__theme-menu-button {
+  border: none;
+  text-transform: lowercase;
+  background-color: transparent;
+}
+
+.header__title {
+  grid-area: header__title;
+  -webkit-margin-before: clamp(67px, -2.1908rem + 27.4809vw, 176px);
+          margin-block-start: clamp(67px, -2.1908rem + 27.4809vw, 176px);
+  color: var(--header__title-text-color, #db00ff);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+.header__paragraph {
+  grid-area: paragraph;
+  inline-size: 100%;
+  -webkit-margin-before: clamp(3.4375rem, -2.8841rem + 26.972vw, 10.0625rem);
+          margin-block-start: clamp(3.4375rem, -2.8841rem + 26.972vw, 10.0625rem);
+  -webkit-margin-after: clamp(3.5rem, -2.8812rem + 27.2265vw, 10.1875rem);
+          margin-block-end: clamp(3.5rem, -2.8812rem + 27.2265vw, 10.1875rem);
+  font-family: inherit;
+  font-weight: 700;
+}
+
+.title-decor {
+  color: var(--title-text-color);
+  background-color: var(--background-title-color);
+}
+
+@media (width >= 768px) {
+  .header__paragraph {
+    grid-column-start: 2;
+    grid-column-end: span 1;
+  }
+
+  .header__title {
+    -webkit-transform: translateX(-20px);
+        -ms-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
