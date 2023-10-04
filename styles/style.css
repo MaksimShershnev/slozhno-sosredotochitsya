@@ -163,3 +163,30 @@
             transform: translateX(-20px);
   }
 }
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    -webkit-margin-before: 0;
+            margin-block-start: 0;
+  }
+
+  .header__theme-menu-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .header__title {
+    -webkit-margin-before: 274px;
+            margin-block-start: 274px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__paragraph {
+    margin-block: 114px;
+  }
+}
