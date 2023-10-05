@@ -77,7 +77,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* gap: 3px; */
   color: var(--accent-color, #ff0070);
   text-transform: uppercase;
 }
@@ -143,8 +142,8 @@
           margin-block-start: clamp(3.4375rem, -2.8841rem + 26.972vw, 10.0625rem);
   -webkit-margin-after: clamp(3.5rem, -2.8812rem + 27.2265vw, 10.1875rem);
           margin-block-end: clamp(3.5rem, -2.8812rem + 27.2265vw, 10.1875rem);
-  font-weight: 700;
   font-family: inherit;
+  font-weight: 700;
 }
 
 .content {
@@ -152,51 +151,46 @@
 }
 
 .content__section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   -webkit-margin-before: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
           margin-block-start: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: -webkit-min-content;
-  grid-template-rows: min-content;
-  gap: 20px;
 }
 
 .content__section-title {
-  grid-column-start: 1;
-  grid-column-end: span 2;
+  grid-column: span 1;
   color: var(--accent-color, #ff0070);
   font-family: inherit;
-  font-size: inherit;
   font-weight: 700;
+  font-size: inherit;
 }
 
 .content__section-list {
-  grid-column-start: 1;
-  grid-column-end: span 2;
+  grid-column: span 1;
 }
 
 .card-title {
-  font-size: inherit;
-  font-weight: 700;
-  font-family: inherit;
   -webkit-margin-after: 10px;
           margin-block-end: 10px;
-  
+  font-family: inherit;
+  font-weight: 700;
+  font-size: inherit;
 }
 
 .card-subtitle {
   -webkit-margin-before: 20px;
           margin-block-start: 20px;
-  font-size: inherit;
-  font-family: inherit;
   -webkit-margin-after: 10px;
           margin-block-end: 10px;
+  font-family: inherit;
   font-weight: 400;
+  font-size: inherit;
 }
 
 .card-text {
-  font-size: inherit;
   font-family: inherit;
+  font-size: inherit;
 }
 
 .content__section-list-item:not(:last-of-type) {
@@ -215,26 +209,39 @@
 }
 
 @media (width >= 768px) {
-  .header__paragraph {
-    grid-column-start: 2;
-    grid-column-end: span 1;
-  }
-
   .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     -webkit-transform: translateX(-20px);
         -ms-transform: translateX(-20px);
             transform: translateX(-20px);
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .content__section-title {
-    grid-column-start: 1;
-    grid-column-end: span 1;
+  .header__paragraph {
+    grid-column: 2 / span 1;
   }
 
-  .content__section:not(:nth-child(2)) .content__section-list {
-    grid-column-start: 2;
-    grid-column-end: span 1;
+  .content__section-column-2 {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content__section-column-2 > .content__section-title {
+    grid-column: span 1;
+  }
+
+  .content__section-column-2 > .content__section-list {
+    grid-column: 2 / span 1;
+  }
+
+  .content__section-column-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content__section-column-3 > .content__section-title {
+    grid-column: span 1;
+  }
+
+  .content__section-column-3 > .content__section-list {
+    grid-column: span 3;
   }
 }
 
@@ -263,20 +270,35 @@
     margin-block: 114px;
   }
 
-  .content__section:nth-child(2) .content__section-list {
-    grid-column-start: 1;
-    grid-column-end: span 3;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  .content__section-column-2 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content__section-column-2 > .content__section-title {
+    grid-column: span 1;
+  }
+
+  .content__section-column-2 > .content__section-list {
+    grid-column: 2 / span 2;
+  }
+
+  .content__section-column-3 > .content__section-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(314px, 1fr));
     gap: 20px;
   }
 
-  .content__section:nth-child(2) .content__section-list-item {
-    -ms-flex-preferred-size: 315px;
-        flex-basis: 315px;
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+  /* Вариант решения через Flex при котором последующая карточка
+   при попадании на новую строку будет растягиваться */
+
+  /* .content__section-column-3 > .content__section-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
   }
+
+  .content__section-column-3 .content__section-list-item {
+    flex-basis: 314px;
+    flex-grow: 1;
+  } */
 }
