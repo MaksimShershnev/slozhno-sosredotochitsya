@@ -48,10 +48,10 @@
   display: block;
   inline-size: 25px;
   block-size: 25px;
-  -webkit-border-end: 1px solid var(--accent-color, #ff0070);
-          border-inline-end: 1px solid var(--accent-color, #ff0070);
-  -webkit-border-before: 1px solid var(--accent-color, #ff0070);
-          border-block-start: 1px solid var(--accent-color, #ff0070);
+  -webkit-border-end: 1px solid var(--accent-text-color, #ff0070);
+          border-inline-end: 1px solid var(--accent-text-color, #ff0070);
+  -webkit-border-before: 1px solid var(--accent-text-color, #ff0070);
+          border-block-start: 1px solid var(--accent-text-color, #ff0070);
   inset-inline-end: 0;
   inset-block-start: 0;
 }
@@ -62,10 +62,10 @@
   display: block;
   inline-size: 25px;
   block-size: 25px;
-  -webkit-border-start: 1px solid var(--accent-color, #ff0070);
-          border-inline-start: 1px solid var(--accent-color, #ff0070);
-  -webkit-border-after: 1px solid var(--accent-color, #ff0070);
-          border-block-end: 1px solid var(--accent-color, #ff0070);
+  -webkit-border-start: 1px solid var(--accent-text-color, #ff0070);
+          border-inline-start: 1px solid var(--accent-text-color, #ff0070);
+  -webkit-border-after: 1px solid var(--accent-text-color, #ff0070);
+          border-block-end: 1px solid var(--accent-text-color, #ff0070);
   inset-inline-start: 0;
   inset-block-end: 0;
 }
@@ -73,7 +73,9 @@
 .header__element-rec {
   position: absolute;
   inset: 0 0 auto auto;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -112,19 +114,34 @@
 }
 
 .header__theme-menu-item {
-  padding: 4px 13px;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-text-color, #ff0070);
   line-height: 1;
 }
 
 .header__theme-menu-button {
+  padding: 4px 13px;
   border: none;
   text-transform: lowercase;
   background-color: transparent;
 }
 
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color-semitransparent, #ff007066);
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  -webkit-box-shadow: 0 1px var(--accent-text-color, #ff0070);
+          box-shadow: 0 1px var(--accent-text-color, #ff0070);
+}
+
 .header__theme-menu-button_active {
   pointer-events: none;
+  outline: 1px solid var(--accent-text-color, #ff0070);
 }
 
 .header__title {
@@ -173,9 +190,8 @@
 }
 
 .content-section__title {
-  /* margin-block-end: 20px; */
   grid-column: span 1;
-  color: var(--accent-color, #ff0070);
+  color: var(--accent-text-color, #ff0070);
   font-family: inherit;
   font-weight: 700;
   font-size: inherit;
@@ -214,11 +230,6 @@
 .card-text:not(:last-of-type) {
   -webkit-margin-after: 20px;
           margin-block-end: 20px; /* в случае добавления доп. абзацев */
-}
-
-.title-decor {
-  color: var(--title-text-color);
-  background-color: var(--background-title-color);
 }
 
 .content-section__pictures {
@@ -262,6 +273,30 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 0.825;
   text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+.title-decor {
+  color: var(--title-text-color);
+  background-color: var(--accent-color, #ff0070);
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+.link:hover {
+  -webkit-box-shadow: 0 1px var(--text-color, #f1b2ce);
+          box-shadow: 0 1px var(--text-color, #f1b2ce);
+  cursor: pointer;
+}
+
+.link:focus {
+  outline: none;
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color, #f1b2ce);
 }
 
 @media (width >= 768px) {
