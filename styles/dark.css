@@ -18,7 +18,7 @@
   background-image: url(../images/cover-image-dark.png);
 }
 
-.theme_light .header__element-rec {
+.theme_dark .header__element-rec {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
