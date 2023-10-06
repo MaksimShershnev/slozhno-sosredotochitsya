@@ -73,9 +73,7 @@
 .header__element-rec {
   position: absolute;
   inset: 0 0 auto auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
