@@ -246,7 +246,7 @@
 
 .content-section__pictures-item {
   inline-size: 100%;
-  block-size: 100%;
+  min-block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -254,7 +254,7 @@
 .footer {
   -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
           margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  inline-size: 100%;
+  /* inline-size: 100%; */
   block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
   position: relative;
   display: -webkit-box;
