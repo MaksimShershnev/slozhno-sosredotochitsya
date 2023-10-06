@@ -23,6 +23,7 @@
 .header {
   position: relative;
   display: grid;
+  block-size: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, -webkit-min-content);
   grid-template-rows: repeat(3, min-content);
