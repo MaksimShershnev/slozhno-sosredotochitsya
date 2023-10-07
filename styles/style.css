@@ -1,12 +1,13 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   padding: clamp(
     0.625rem,
     0.0271rem + 2.551vw,
     1.25rem
   ); /* от 10px при 375 до 20px при 768 и больше */
+  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+
   color: var(--text-color, #f1b2ce);
   font-family: 'IBM Plex Mono', Arial, Helvetica, sans-serif;
   font-weight: 400;
@@ -32,7 +33,7 @@
     'nav nav'
     'header__title header__title'
     'paragraph paragraph';
-  block-size: 100vh;
+  block-size: calc(100vh - (2 * clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem)));
   -webkit-margin-after: clamp(
     0.625rem,
     0.0271rem + 2.551vw,
@@ -259,7 +260,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  block-size: 100vh;
+  block-size: calc(100vh - (2 * clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem)));
   -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
           margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
