@@ -121,8 +121,8 @@
 }
 
 .header__theme-menu-button {
-  padding: 4px 13px;
   border: none;
+  padding: 4px 13px;
   text-transform: lowercase;
   background-color: transparent;
 }
@@ -142,8 +142,8 @@
 }
 
 .header__theme-menu-button_active {
-  pointer-events: none;
   outline: 1px solid var(--accent-text-color, #ff0070);
+  pointer-events: none;
 }
 
 .header__title {
@@ -170,7 +170,6 @@
 }
 
 .content {
-  margin-block: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -179,6 +178,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
+  margin-block: clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
 }
 
 .content-section {
@@ -231,26 +231,23 @@
 }
 
 .content-section__pictures {
-  -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-          margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: -webkit-min-content;
   grid-template-rows: min-content;
   gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); /* от 10px до 20px */
+  -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+          margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
 .content-section__pictures-item {
   inline-size: 100%;
-  min-block-size: 100%;
   object-fit: cover;
   object-position: center;
+  min-block-size: 100%;
 }
 
 .footer {
-  -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-          margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,6 +258,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
+  -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+          margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
 
 .footer__title {
