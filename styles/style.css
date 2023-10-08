@@ -34,6 +34,7 @@
     'header__title header__title'
     'paragraph paragraph';
   block-size: calc(100vh - (2 * clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem)));
+  min-block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
   -webkit-margin-after: clamp(
     0.625rem,
     0.0271rem + 2.551vw,
@@ -261,6 +262,7 @@
       -ms-flex-align: center;
           align-items: center;
   block-size: calc(100vh - (2 * clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem)));
+  min-block-size: 668px;
   -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
           margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
 }
@@ -372,6 +374,10 @@
 }
 
 @media (width >= 1024px) {
+  .header {
+    min-block-size: 728px;
+  }
+
   .header__theme-menu {
     -webkit-margin-before: 0;
             margin-block-start: 0;
@@ -412,6 +418,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(309px, 1fr));
     gap: 20px;
+  }
+
+  .footer {
+    min-block-size: 728px;  
   }
 
   /* Вариант решения через Flex при котором последующая карточка
