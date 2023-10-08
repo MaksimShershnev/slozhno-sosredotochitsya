@@ -33,18 +33,13 @@
     'nav nav'
     'header__title header__title'
     'paragraph paragraph';
+  /* высота в размер окна просмотра */
   block-size: calc(100vh - (2 * clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem)));
+  /* мин высота чтобы не наезжала секция main */
   min-block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
-  -webkit-margin-after: clamp(
-    0.625rem,
-    0.0271rem + 2.551vw,
-    1.25rem
-  );
-          margin-block-end: clamp(
-    0.625rem,
-    0.0271rem + 2.551vw,
-    1.25rem
-  ); /* от 10px при 375 до 20px при 768 и больше */
+  /* от 10px при 375 до 20px при 768 и больше */
+  -webkit-margin-after: clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem);
+          margin-block-end: clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem);
 }
 
 .decorated-zone::before {
@@ -251,9 +246,9 @@
 
 .content-section__pictures-item {
   inline-size: 100%;
+  min-block-size: 100%;
   object-fit: cover;
   object-position: center;
-  min-block-size: 100%;
 }
 
 .footer {
@@ -267,7 +262,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /* высота в размер окна просмотра */
   block-size: calc(100vh - (2 * clamp(0.625rem, 0.0271rem + 2.551vw, 1.25rem)));
+  /* мин высота, чтобы соответствовала header */
   min-block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
   -webkit-margin-before: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
           margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
